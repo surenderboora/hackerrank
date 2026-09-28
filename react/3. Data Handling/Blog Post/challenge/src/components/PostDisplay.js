@@ -1,13 +1,17 @@
 import React from "react";
 
-function PostDisplay() {
+function PostDisplay({ posts }) {
+
+
   return (
     <div data-testid="posts-container" className="flex wrap gap-10">
-      <div className="post-box">
-        <h3>{"Title"}</h3>
-        <p>{"Description"}</p>
-        <button>Delete</button>
-      </div>
+      {posts?.map((post) =>
+        <div className="post-box">
+          <h3>{post.title}</h3>
+          <p>{post.description}</p>
+          <button>Delete</button>
+        </div>
+      )}
     </div>
   );
 }
